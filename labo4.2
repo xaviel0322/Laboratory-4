@@ -1,0 +1,35 @@
+Sudo dnf install postfix
+
+Para ver el estatus 
+
+Systemctl status postfix 
+
+Cd /etc/postfix
+ Ls
+
+Sudo nano main.cf
+
+
+relayhost = [smtp-gmail.com] :587
+smtp_use_tls = yes
+smtp_sasl_auth_enable = yes
+smtp_sast_security_options = noanonymous
+smtp_sasl_tls_security_options = noanonymous
+smtp_sasl_password_maps = hash: /etc/postfix/sasl_passwd
+smtp_tls_CAfile = /etc/ssl/certs/ca-bundle,crt
+
+Para el Gmail envíalo 
+
+Sudo nano /etc/postfix/sasl_passwd
+
+Le ortogamos permisos 
+
+Sudo Chmod 600 /etc/postfix/sasl_passwd
+
+Sudo postmap  /etc/postfix/sasl_passwd
+
+Ahora reiniciamos el postfix
+
+Ahora enviamos el correo 
+
+Echo “elvis xaviel Ramirez feliz” | s-nail -s “MambruSeFueALaGuerra”  os3conadrian@gmail.com 
