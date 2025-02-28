@@ -1,0 +1,27 @@
+Para instalar el paquete de cups
+
+Sudo dnf install cups
+
+Sudo dnf install cups-pdf
+
+Verificamos que está corriendo bien 
+
+Systemctl status cups
+
+Configuramos el archivo de cups
+
+Cups to —remote-admin —remote-any —share-printers
+
+Activamos el puerto 631 con el firewall 
+
+Sudo firewall-cmd —permanent  —add-port=631/tcp
+
+Hacesmos un reload
+
+Sudo firewall-cmd —reload 
+
+Confirmamos la ip 
+
+Luego abrimos el firewall y ponemos la ip con el 631
+
+Nos vamos a admiración. 
