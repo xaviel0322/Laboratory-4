@@ -1,0 +1,24 @@
+Práctica 1 
+Acedemos a la ruta 
+Cd /var/www/html
+
+Creamos una carpeta 
+
+Mkdir mundo
+
+cd mundo/
+
+Nano index.
+
+<html>
+<h1>hola mundo </h1>
+<html>
+
+Luego ponemos   mano /etc/httpd/conf/httpd.conf
+
+<virtualhost *:80>
+Servername mundo.localhost
+Documentroot /var/www/HTML/mundo
+</virtualhost>
+
+Systemctl restart httpd.
